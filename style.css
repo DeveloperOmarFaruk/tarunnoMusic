@@ -1,0 +1,199 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        text-align: center;
+        font-family: sans-serif;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 8vh;
+        background-color: #8B008B;
+        font-family: 'Atma', cursive;
+        font-family: 'Galada', cursive;
+    }
+    
+    nav.black {
+        padding: 5px 100px;
+        background: black;
+    }
+    
+    .logo {
+        color: goldenrod;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 28px;
+    }
+    
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+    }
+    
+    .nav-links li {
+        list-style: none;
+    }
+    
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-weight: lighter;
+        font-size: 14px;
+        text-transform: uppercase;
+        transition: .5s;
+        padding: 5px 20px;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .nav-links a:hover {
+        color: #fff;
+        background: #4B0082;
+    }
+    
+    .burger {
+        display: none;
+        cursor: pointer;
+    }
+    
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+        transition: all 0.2s ease;
+    }
+    
+    @media screen and (max-width: 1024px) {
+        .nav-links {
+            width: 60%;
+        }
+    }
+    
+    @media screen and (max-width: 786px) {
+        body {
+            overflow-x: hidden;
+        }
+        .nav-links {
+            position: absolute;
+            right: 0px;
+            height: 92vh;
+            top: 8vh;
+            background-color: #8B008B;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+        }
+        .nav-liks li {
+            opacity: 0;
+        }
+        .burger {
+            display: block;
+        }
+    }
+    
+    .nav-active {
+        transform: translateX(0%);
+    }
+    
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX( 0px);
+        }
+    }
+    
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .toggle .line2 {
+        opacity: 0;
+    }
+    
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    /*-----------------Bike Part----------------*/
+    
+    .bike__class {}
+    
+    .landing {
+        height: 90vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .landing h1 {
+        margin: 100px;
+        font-size: 35px;
+        color: #FF00FF;
+        letter-spacing: 4px;
+        font-family: 'Atma', cursive;
+        font-family: 'Galada', cursive;
+    }
+    
+    #bike1 {
+        margin-top: 150px;
+        margin-bottom: 70px;
+    }
+    
+    #frontcaka,
+    #backcaka {
+        animation: caka 0.2s infinite linear;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+    
+    #manbike {
+        animation: bike 0.6s ease-in-out infinite alternate;
+        transform-origin: bottom;
+    }
+    
+    #tupi {
+        animation: tupi 0.6s ease-in-out infinite alternate;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+    
+    @keyframes caka {
+        from {
+            transform: rotateZ(0deg);
+        }
+        to {
+            transform: rotateZ(360deg);
+        }
+    }
+    
+    @keyframes bike {
+        from {
+            transform: rotateX(0deg);
+        }
+        to {
+            transform: rotateX(20deg);
+        }
+    }
+    
+    @keyframes tupi {
+        from {
+            transform: translateY(0%);
+        }
+        to {
+            transform: translateY(30%);
+        }
+    }
